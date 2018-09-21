@@ -1,0 +1,162 @@
+#加法method A
+#include <iostream>  //文件导入 
+using namespace std; //使用文件中的流对象cin、cout 
+int main(void) //定义主函数，数据类型为int类型，无变量 
+{
+	int a,b,c; //定义变量a，b，c 
+	cin >> a; //输入以赋值给a 
+	cin >> b; //输入以赋值给b 
+	c = a + b; //将a，b相加并赋值给c 
+	cout << c << '\n'; //输出c并换行 
+	return 0; //不返回任何值 
+}
+
+
+#加法method B
+#include <iostream> //文件導入 
+using namespace std; //使用文件中cin、cout流對象 
+int sum(int x, int y) //構造加法函數，int類型，x、y變量 
+{
+	int z; //定義z 
+	z = x + y; //加法表達式 
+	return z; //返回z的值 
+}
+int main(void) //構造主函數，int類型，x、y變量。程序由此處開始 
+{
+	int a , b; //定義a、b ** int a, int b； ：句法错误，会致使b未被说明 
+	cin >> a; //輸入以賦值給a 
+	cin >> b; //輸入以賦值給b 
+	int c;  //定義c 
+	c = sum(a, b); //調用前面定義了的sum函數計算a和b的和并返回給c  
+	cout << "c=" << c; //輸出c的值 
+	return 0; //不返回任何值 
+}  
+
+
+#輸出文字和符號
+#include <iostream> //导入文件<iostream> 
+using namespace std; //使用文件中流对象cout
+int main(void) //定义主函数，数据类型为int类型，无参数 
+{
+	cout << "Hello,GDUFS!" << '\n' <<"(〃'▽'〃)"; //输出文字"Hello,GDUFS!",一个有字母或字符的自定义图案(〃'▽'〃) 
+	return 0; //不返回任何值 
+}
+
+
+#計算平方method A
+#include <iostream> //導入文件 
+using namespace std; //使用文件中的流對象cin、cout 
+int main(void) //定義主函數，程序從此處開始運行 
+{
+	int a, b; //定義a、b 
+	cout << "a= "; //輸出提示信息字符串"a=" 
+	cin >> a; //輸入以賦值給a 
+	b = a * a; //將a平方并賦值給b 
+	cout << b; //輸出b的值 
+	return 0; //不返回任何值 
+}
+
+
+#計算平方method B
+#include <iostream> //導入文件 **“<”打了之後自動補充“>”  
+using namespace std; //使用文件中的流對象cin、cout 
+int square(int a) //定義函數square，int類型，變量（形式參數）a 
+{
+	int b; //定義b 
+	b = a * a; //將a平方并賦值給b 
+	return b; //返回b的值 
+ } 
+ int main(void) //定義主函數，int類型，無變量 
+ {
+ 	int x; //定義x 
+ 	cout << "please input a number:"; //輸出提示字符串 
+ 	cin >> x; //輸入數據并賦值給x 
+ 	square(x); //調用函數square并計算x的平方，square函數運行并將結果返回給主函數的square（x） 
+ 	cout << square(x); //輸出square（x） 
+	/*
+	square(x);
+ 	cout << square(x);   
+	可寫成： 
+	int y; //定義y **y可以替換成b，此處的b為local。（square函數的b也為local） 
+	y = square(x); //調用square函數并計算x的平方，square函數運行并將結果返回給y 
+	cout << y; //輸出y的值  
+	*/ 
+ 	return 0;
+ }
+
+
+#輸入+輸出+加法+平方
+#include"pch.h"
+#include <iostream>
+using namespace std;
+ 
+/*
+構造求和函數
+*/
+int sum(int x, int y)
+{
+	int sum;
+	sum = x + y;
+	return sum;
+}
+
+/*
+構造求平方函數
+*/
+int square(int a)
+{
+	int square;
+	square = a * a;
+	return square;
+}
+
+int main(void)
+{
+	/*
+	輸出文本字符串和符號
+	*/
+	cout << "Hello,GDUFS!" << '\n' << ">w<" << '\n';
+	
+	/*
+	用運算符求和
+	*/
+	int a, b, c;
+	cout << "input a number:" << '\n';
+	cin >> a;
+	cout << "input one more number:" << '\n';
+	cin >> b;
+	c = a + b;
+	cout << c << '\n';
+
+	/*
+	用求和函數求和
+	*/
+	int d, e, f;
+	cout << "input a number:" << '\n';
+	cin >> d;
+	cout << "input one more number" << '\n';
+	cin >> e;
+	f = sum(d, e);
+	cout << f << '\n';
+
+	/*
+	用運算符求平方
+	*/
+
+	int g, h;
+	cout << "input a number:" << '\n';
+	cin >> g;
+	h = g * g;
+	cout << h << '\n';
+	
+
+	/*
+	用求平方函數求平方
+	*/
+	int i, j;
+	cout << "input a number:" << '\n';
+	cin >> i;
+	j = square(i);
+	cout << j;
+	return 0;
+}
