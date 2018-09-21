@@ -160,3 +160,28 @@ int main(void)
 	cout << j;
 	return 0;
 }
+
+#Python类似功能的程序
+print("Hello GDUFS! \n >w<") #use print function to output something * "," is not needed when \n is put between two strings or it will also be output 
+
+a = int(input("input a number: \n")) #input something with the input function 
+b = int(input("input one more number: \n")) #input something with the input function *line-changing is done with \n in Python, single quotes are not needed
+c = a + b #add up a and b with the operator +
+print(c) #output the result with the print function
+
+def sum(a, b): #define a function with a name "sum" and parameters a and b
+    c = a + b #add up a and b with the operator +
+    print(c) #output the result with the print function
+
+sum(a, b) #use sum function defined above to add up numbers
+
+d = int(input("input a number: \n")) #input something with the input function
+e = d * d #square d with the operator *
+print(e) #output the result with the print function
+
+def square(d): #define a function with a name "square" and a parameter d
+    e = d * d #square d with the operator *
+    print(e) #output the result with the print function
+
+square(d) #use square function defined above to square numbers
+
