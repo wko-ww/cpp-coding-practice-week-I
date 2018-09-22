@@ -1,4 +1,4 @@
-#加法method A
+#-----加法method A-----
 #include <iostream>  //文件导入 
 using namespace std; //使用文件中的流对象cin、cout 
 int main(void) //定义主函数，数据类型为int类型，无变量 
@@ -12,7 +12,7 @@ int main(void) //定义主函数，数据类型为int类型，无变量
 }
 
 
-#加法method B
+#-----加法method B-----
 #include <iostream> //文件導入 
 using namespace std; //使用文件中cin、cout流對象 
 int sum(int x, int y) //構造加法函數，int類型，x、y變量 
@@ -33,7 +33,7 @@ int main(void) //構造主函數，int類型，x、y變量。程序由此處開�
 }  
 
 
-#輸出文字和符號
+#-----輸出文字和符號-----
 #include <iostream> //导入文件<iostream> 
 using namespace std; //使用文件中流对象cout
 int main(void) //定义主函数，数据类型为int类型，无参数 
@@ -43,7 +43,7 @@ int main(void) //定义主函数，数据类型为int类型，无参数
 }
 
 
-#計算平方method A
+#-----計算平方method A-----
 #include <iostream> //導入文件 
 using namespace std; //使用文件中的流對象cin、cout 
 int main(void) //定義主函數，程序從此處開始運行 
@@ -57,7 +57,7 @@ int main(void) //定義主函數，程序從此處開始運行
 }
 
 
-#計算平方method B
+#-----計算平方method B-----
 #include <iostream> //導入文件 **“<”打了之後自動補充“>”  
 using namespace std; //使用文件中的流對象cin、cout 
 int square(int a) //定義函數square，int類型，變量（形式參數）a 
@@ -85,7 +85,7 @@ int square(int a) //定義函數square，int類型，變量（形式參數）a
  }
 
 
-#輸入+輸出+加法+平方
+#-----輸入+輸出+加法+平方-cpp-----
 #include"pch.h"
 #include <iostream>
 using namespace std;
@@ -161,11 +161,20 @@ int main(void)
 	return 0;
 }
 
-#Python类似功能的程序
-print("Hello GDUFS! \n >w<") #use print function to output something * "," is not needed when \n is put between two strings or it will also be output 
+#-----輸入+輸出+加法+平方-py-----
+print("Hello GDUFS! \n >w<") #use print function to output something 
+"""
+* "," is not needed when \n is put between two parts of a string or it will also be output
+but it is needed when \n is put after a variable, in which situation a pair of double quotes is also necessary
+for example:
+print("Hello GDUFS! \n >w<")
+but:
+print("the result of adding up", a, "and", b, "is",c, "\n")
+
+"""
 
 a = int(input("input a number: \n")) #input something with the input function 
-b = int(input("input one more number: \n")) #input something with the input function *line-changing is done with \n in Python, single quotes are not needed
+b = int(input("input one more number: \n")) #input something with the input function 
 c = a + b #add up a and b with the operator +
 print(c) #output the result with the print function
 
@@ -184,4 +193,48 @@ def square(d): #define a function with a name "square" and a parameter d
     print(e) #output the result with the print function
 
 square(d) #use square function defined above to square numbers
+
+#-----Exercise-1-cpp-----
+#include"pch.h" #remember to add that at the beginning of the code when using Microsoft Visual Studio C++!!
+#include <iostream>
+using namespace std;
+int main(void)
+{
+	int a, b, c, d, e;
+	cout << "please input a number: " << '\n';
+	cin >> a;
+	cout << "please input one more number: " << '\n';
+	cin >> b;
+	c = a + b;
+	d = a * a;
+	e = b * b;
+	cout << "the result of adding up " << a << " and " << b << " is " << c << '\n';
+	/*
+	unlike in Python, the cout in cpp doesn't put a space automatically between a string or a parameter
+	which means we should remember to put the space by ourselves
+	that is
+	cout << "the result of adding up" << a << "and" << b << "is" << c << '\n';
+	will be printed out like
+	the result of adding up6and6is12
+	*/
+	cout << "the result of squaring " << a << " is " << d << '\n';
+	cout << "the result of squaring " << b << " is " << e << '\n';
+	return 0;
+}
+
+#-----Exercise-1-py-----
+a = int(input("please input a number: \n"))
+b = int(input("please input one more number: \n"))
+c = a + b
+d = a * a
+e = b * b
+print("the result of adding up", a, "and", b, "is",c, "\n") 
+"""
+*the print function in Python will put a space automatically between a string and a variable
+*the line-changing notation \n should be closed in a pair of double quotes "" 
+ and in C++ it's closed in a pair of single quotes ''
+"""
+print("the result of squaring", a, "is", d, "\n")
+print("the result of squaring", b, "is", e, "\n")
+
 
