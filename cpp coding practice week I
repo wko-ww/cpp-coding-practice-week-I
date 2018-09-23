@@ -237,4 +237,87 @@ print("the result of adding up", a, "and", b, "is",c, "\n")
 print("the result of squaring", a, "is", d, "\n")
 print("the result of squaring", b, "is", e, "\n")
 
+#-----差分機平方算法-Python-----
+#根據差分機原理算輸入的數及其之後99個自然數的平方
+b = int(input("input a number: \n"))
+a = b + 1
+n = 1
+print(pow(b, 2)) 
+print(pow(a, 2))
+while n < 99:
+    
+    d = a * a
+    e = b * b
+    f = 2 + 2 * d - e
+    n = n + 1
+    a = a + 1
+    b = b + 1
+
+
+    print(f)
+print(a, b)
+
+#-----由差分機算平方原理推出的pow（num，index）求法-----
+"""
+It's a program to get the result of pow(num, index).
+From the conclusion of the algorithm of the Difference Engine that gets the result of two numbers squared, 
+we can derive an expression: num ^ index + ∑(-1) ^ ki * Cnumk(index + ki) * (num + g) ^ index = num!, ki ∈ (1, num)，ki ∈ Z; i ∈ (-num, -1)(i is iterated over from the right), i ∈ Z
+The result of Cnumk can be calculated by making functions
+Cnumk = num(num-1)(num-2)…(num-k+1) / num!
+Therefore,when a function for calculating num(num-1)(num-2)…(num-k+1) and a function for calculating num! are defined seperately 
+then put together to make a function to calculate Cnumk
+we can get the result of Cnumk
+"""
+
+
+
+
+#求k！
+def factorial(k): #define a function called factorial with a parameter k to get k!
+    a = 1 #k starts from 1
+    for i in range(2, k + 1): #iterate over the range which starts from 2 and ends with k+1. that is, 1*2*3*……*k 
+        a = a * i
+    return a #RETURN THE RESULT SO THAT WE CAN USE IT IN ANOTHER FUNCTION! *note that return is necessary when we want to print out the result of the function
+
+#求num(num-1)(num-2)…(num-k+1)
+def func2(num, k): #define a function called func2 with two parameters num and k to get the result of the expression shown above
+    #actually this function can be omitted here as we have one already below
+    b = 1 
+    for i in range(- (k - 1), 1): #(a smaller number, a greater number) *watch out for the former part -(k-1)!
+        b = (num + i) * b
+#——————————————————————————————————————————————————————————————————————     
+#求Cnk:
+def Cnk(num, k):
+    if k == num or k == 0: #they are two special situation *note that equal is represented by == in py.
+        c = 1
+    else: 
+        #求k！
+        a = 1
+        for i in range(2, k + 1):
+            a = a * i
+ 
+        #求num(num-1)(num-2)…(num-k+1)
+        b = 1
+        for i in range(- (k - 1), 1): #(a smaller number, a greater number)
+            b = (num + i) * b
+        c = b / a
+    return c #RETURN THE RESULT SO THAT WE CAN USE IT IN ANOTHER FUNCTION!
+
+num = int(input("input a number: \n")) #output a message and make users input a number
+index = int(input("input the index: \n")) #output message and make users input an index
+
+def func(): 
+    ki = range(1, num + 1) #f
+    i = range(-1, -num - 1, -1) #g
+    di = dict(zip(ki, i)) #make two tuples including needed data seperately be in a dictionary with zip()
+    h = 0
+    for f, g in di.items(): #use the dictionary and items() to access every pair of information AT THE SAME TIME
+        h = h + pow(-1, f) * Cnk(index, f) * pow((num + g), index) #it's an expression got from the algorithm of the difference engine
+    return h #RETURN THE RESULT SO THAT WE CAN USE IT IN ANOTHER FUNCTION!
+
+C = factorial(index) - func() #watch out for the "-"
+print(C)
+
+
+
 
