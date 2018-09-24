@@ -261,16 +261,13 @@ print(a, b)
 """
 It's a program to get the result of pow(num, index).
 From the conclusion of the algorithm of the Difference Engine that gets the result of two numbers squared, 
-we can derive an expression: num ^ index + ∑(-1) ^ ki * Cnumk(index + ki) * (num + g) ^ index = num!, ki ∈ (1, num)，ki ∈ Z; i ∈ (-num, -1)(i is iterated over from the right), i ∈ Z
+we can derive an expression: num ^ index + ∑(-1) ^ ki * Cnumk(index ， ki) * (num + i) ^ index = num!, ki ∈ (1, num)，ki ∈ Z; i ∈ (-num, -1)(i is iterated over from the right), i ∈ Z
 The result of Cnumk can be calculated by making functions
 Cnumk = num(num-1)(num-2)…(num-k+1) / num!
 Therefore,when a function for calculating num(num-1)(num-2)…(num-k+1) and a function for calculating num! are defined seperately 
 then put together to make a function to calculate Cnumk
 we can get the result of Cnumk
 """
-
-
-
 
 #求k！
 def factorial(k): #define a function called factorial with a parameter k to get k!
@@ -317,6 +314,7 @@ def func():
 
 C = factorial(index) - func() #watch out for the "-"
 print(C)
+
 
 -----Exercise II-----
 #include"pch.h" //remember the # 
