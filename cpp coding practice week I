@@ -318,6 +318,28 @@ def func():
 C = factorial(index) - func() #watch out for the "-"
 print(C)
 
+-----Exercise II-----
+#include"pch.h" //remember the # 
+#include <iostream> //in cpp, comments behind a statement is represented with // but not #
+using namespace std;
+int func(int x, int y)
+{
+	int z;
+	z = x + y; 
+	return z; //note that if a value returned from the function is needed, the statement should be written like return a, a is the value needed
+}
+int main(void)
+{
+	int a, b; //remember to define letters if they are to be used below
+	cout << "Hello World! \n " << '\n' << "(〃'▽'〃) \n" << '\n'; // \n can be put in a pair of double quotes as a part of the string just like that in python
+	cout << "input a number:" << '\n';
+	cin >> a;
+	cout << "input one more number:" << '\n';
+	cin >> b;
+	func(a, b);
+	cout << a << " plus " << b << " is " << func(a, b) << '\n'; //like in py, a function with expected variables can be directly put in a cout statement
+	return 0;
+}
 
 
 
