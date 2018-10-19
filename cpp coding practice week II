@@ -338,6 +338,3 @@ int main(void)
 	cout << a << " plus " << b << " is " << func(a, b) << '\n'; //like in py, a function with expected variables can be directly put in a cout statement
 	return 0;
 }
-
-
-
