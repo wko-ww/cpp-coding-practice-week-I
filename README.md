@@ -1,2 +1,2 @@
-# cpp-coding-practice-week-I
-cpp coding practice week I
+# cpp-coding-practice-week-II
+cpp coding practice week II
